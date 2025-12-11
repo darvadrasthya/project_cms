@@ -1,0 +1,286 @@
+/*
+* Author	: Ridwan Panji Akbar
+* Codename	: readsevenoine
+* Update	: 2023-01-22 23:43:33
+*/
+
+.__header-border-bottom {
+	border-bottom: 1px solid #d2d6de;
+}
+
+.__sidebar-border-right {
+	border-right: 1px solid #d2d6de;
+}
+
+.__bg-grey-light {
+	background-color: #f9fafc;
+}
+
+.__panel-border-top-primary {
+	border-top: 3px solid #007bff;
+}
+
+.__panel-border-top-warning {
+	border-top: 3px solid #ffc107;
+}
+
+.__panel-border-top-danger {
+	border-top: 3px solid #dc3545;;
+}
+
+.__panel-border-top-success {
+	border-top: 3px solid #28a745;;
+}
+
+.__panel-border-top-dark {
+	border-top: 3px solid #343a40;
+}
+
+.__panel-border-top-muted {
+	border-top: 3px solid #d2d6de;
+}
+
+.__page-header {
+	font-size: 22px;
+	margin: 0px 0px 13px;
+	padding: 0;
+	border: none;
+	line-height: 32px;
+}
+
+.__posind-blue {
+	color: rgba(27, 45, 91, 1);
+}
+
+.vertical-timeline {
+	width: 100%;
+	position: relative;
+	padding: 1.5rem 0 1rem;
+}
+
+.vertical-timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 67px;
+	height: 100%;
+	width: 4px;
+	background: #e9ecef;
+	border-radius: .25rem;
+}
+
+.vertical-timeline-element {
+	position: relative;
+	margin: 0 0 1rem;
+}
+
+.vertical-timeline--animate .vertical-timeline-element-icon.bounce-in {
+	visibility: visible;
+	animation: cd-bounce-1 .8s;
+}
+
+.vertical-timeline-element-icon {
+	position: absolute;
+	top: 0;
+	left: 60px;
+}
+
+.vertical-timeline-element-icon .badge-dot-xl {
+	box-shadow: 0 0 0 5px #fff;
+}
+
+.badge-dot-xl {
+	width: 18px;
+	height: 18px;
+	position: relative;
+}
+
+.badge:empty {
+	display: none;
+}
+
+.badge-dot-xl::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	border-radius: .25rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -5px 0 0 -5px;
+	background: #fff;
+}
+
+.vertical-timeline-element-content {
+	position: relative;
+	margin-left: 90px;
+	font-size: .8rem;
+}
+
+.vertical-timeline-element-content .timeline-title {
+	font-size: .8rem;
+	text-transform: uppercase;
+	margin: 0 0 .5rem;
+	padding: 2px 0 0;
+	font-weight: bold;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-date {
+	display: block;
+	position: absolute;
+	left: -90px;
+	top: 0;
+	padding-right: 10px;
+	text-align: right;
+	color: #adb5bd;
+	font-size: .7619rem;
+	white-space: nowrap;
+}
+
+.vertical-timeline-element-content:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.online {
+    border: 2px solid #00a65a;
+}
+
+.offline {
+    border: 2px solid #dd4b39;
+}
+
+.undefined {
+    border: 2px solid #797979;
+}
+
+.align-baseline {
+    vertical-align: baseline !important;
+}
+
+.align-top {
+    vertical-align: top !important;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.align-bottom {
+    vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+    vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+    vertical-align: text-top !important;
+}
+
+.sp7-bg-green-light {
+    background-color: rgba(0, 128, 0, 0.06);
+}
+
+.sp7-border-green-light {
+    border: 1px solid rgba(0, 128, 0, 0.27);
+}
+
+.sp7-bg-red-light {
+    background-color: rgba(255, 0, 0, 0.06);
+}
+
+.sp7-border-red-light {
+    border: 1px solid rgba(255, 0, 0, 0.27);
+}
+
+.sp7-bg-blue-light {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.sp7-border-blue-light {
+    border: 1px solid rgba(0, 123, 255, 0.27);
+}
+
+.sp7-bg-yellow-light {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.sp7-border-yellow-light {
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.sp7-bg-silver-light {
+    background-color: rgba(192, 192, 192, 0.1);
+}
+
+.sp7-border-silver-light {
+    border: 1px solid rgba(192, 192, 192, 0.27);
+}
+
+.sp7-alert-danger {
+    border: 1px solid rgba(255, 0, 0, 0.27);
+    background-color: rgba(255, 0, 0, 0.06);
+}
+
+.sp7-alert-success {
+    background-color: rgba(0, 128, 0, 0.06);
+    border: 1px solid rgba(0, 128, 0, 0.27);
+}
+
+.sp7-alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.padding-sm {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+.with-rounded-4 {
+	border-radius: 4px !important;
+}
+
+.with-border-line {
+	border: 1px solid #f1f3f5;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	height: 1px;
+}
+
+.sp7-table-xs {
+    font-size: 11px;
+}
+
+.sp7-table-xs th,
+.sp7-table-xs td {
+    padding: 4px !important;
+}
+
+/* Style untuk menghapus border */
+.sp7-table-no-border {
+  border: none !important;
+  box-shadow: none !important;
+  /* Jika ada efek shadow, ini juga dihapus */
+}
+
+/* Contoh untuk tabel tanpa border */
+.table.sp7-table-no-border,
+.table.sp7-table-no-border td,
+.table.sp7-table-no-border th {
+  border: none !important;
+}
+
+/* Pre code or text no margin */
+.pre-nomargin {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.2;
+  display: block;
+  overflow: visible;
+  font-size: 13px;
+}
