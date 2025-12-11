@@ -114,6 +114,15 @@ $route['pages/update/(:num)'] = 'PageController/edit/$1';
 $route['pages/delete/(:num)'] = 'PageController/delete/$1';
 $route['pages/publish/(:num)'] = 'PageController/publish/$1';
 $route['pages/unpublish/(:num)'] = 'PageController/unpublish/$1';
+$route['pages/builder/(:num)'] = 'PageController/builder/$1';
+$route['pages/preview/(:num)'] = 'PageController/preview/$1';
+
+// Page Builder AJAX routes
+$route['pages/add-section/(:num)'] = 'PageController/add_section/$1';
+$route['pages/save-section/(:num)'] = 'PageController/save_section/$1';
+$route['pages/delete-section/(:num)'] = 'PageController/delete_section/$1';
+$route['pages/reorder-sections/(:num)'] = 'PageController/reorder_sections/$1';
+$route['pages/get-section-form/(:num)'] = 'PageController/get_section_form/$1';
 
 // Media management routes
 $route['media'] = 'MediaController/index';

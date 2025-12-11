@@ -7,12 +7,29 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('PageModel');
+		$this->load->model('PageSectionModel');
 		$this->load->model('MenuModel');
 		$this->load->model('SettingModel');
 	}
 
 	public function index()
 	{
+		// Check maintenance mode
+		$maintenance_mode = $this->SettingModel->get_value('maintenance_mode', '0');
+		
+		if ($maintenance_mode == '1') {
+			// Get maintenance settings
+			$data = [
+				'site_name' => $this->SettingModel->get_value('site_name', 'My Website'),
+				'maintenance_title' => $this->SettingModel->get_value('maintenance_title', 'We\'ll be back soon!'),
+				'maintenance_message' => $this->SettingModel->get_value('maintenance_message', 'We are currently performing scheduled maintenance. Please check back later.'),
+				'maintenance_end_time' => $this->SettingModel->get_value('maintenance_end_time', ''),
+				'contact_email' => $this->SettingModel->get_value('contact_email', '')
+			];
+			$this->load->view('public/maintenance', $data);
+			return;
+		}
+		
 		// Get header menu
 		$header_menu = $this->MenuModel->get_menu_tree_by_position('header');
 		
@@ -94,9 +111,16 @@ class Home extends CI_Controller
 		$site_name = $this->SettingModel->get_value('site_name', 'My Website');
 		$site_logo = $this->SettingModel->get_value('site_logo', '');
 
+		// Get page sections if using section builder
+		$sections = [];
+		if (($page['use_sections'] ?? 0) == 1) {
+			$sections = $this->PageSectionModel->get_by_page($page['page_id']);
+		}
+
 		$data = [
 			'title' => $page['title'],
 			'page' => $page,
+			'sections' => $sections,
 			'meta_title' => $page['meta_title'] ?? $page['title'],
 			'meta_description' => $page['meta_description'] ?? '',
 			'header_menu' => $header_menu,

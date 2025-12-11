@@ -80,6 +80,9 @@
 											<a href="<?php echo base_url('pages/edit/' . $page['page_id']); ?>" class="btn btn-sm btn-outline-primary" title="Edit">
 												<i class="bi bi-pencil"></i>
 											</a>
+											<a href="<?php echo base_url('pages/builder/' . $page['page_id']); ?>" class="btn btn-sm btn-outline-secondary" title="Page Builder">
+												<i class="bi bi-layout-text-window-reverse"></i>
+											</a>
 											<?php if ($page['status'] != 'published') : ?>
 												<a href="<?php echo base_url('pages/publish/' . $page['page_id']); ?>" class="btn btn-sm btn-outline-success" title="Publish">
 													<i class="bi bi-check-circle"></i>

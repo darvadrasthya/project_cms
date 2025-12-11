@@ -109,6 +109,9 @@
                             <button type="submit" class="btn btn-primary">
                                 <i class="bi bi-check-lg me-1"></i> Update Page
                             </button>
+                            <a href="<?php echo base_url('pages/builder/' . $page['page_id']); ?>" class="btn btn-outline-secondary">
+                                <i class="bi bi-layout-text-window-reverse me-1"></i> Page Builder
+                            </a>
                             <a href="<?php echo base_url('pages/view/' . $page['page_id']); ?>" class="btn btn-outline-info">
                                 <i class="bi bi-eye me-1"></i> View Page
                             </a>

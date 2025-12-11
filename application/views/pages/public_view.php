@@ -2,12 +2,31 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * Public Page Detail Template
- * Variables: $page, $site_name, $site_logo, $header_menu, $footer_menu
+ * Variables: $page, $site_name, $site_logo, $header_menu, $footer_menu, $sections (optional)
  */
 
-// Load header
-$this->load->view('public/header');
+// Check if using section builder
+$use_sections = ($page['use_sections'] ?? 0) == 1 && !empty($sections);
+$layout_template = $page['layout_template'] ?? 'full_width';
+
+// Load header (except for landing layout with hero section)
+$skip_header_margin = ($layout_template == 'landing');
+$this->load->view('public/header', ['skip_margin' => $skip_header_margin]);
 ?>
+
+<?php if ($use_sections): ?>
+<!-- Section-based Layout -->
+<?php foreach ($sections as $section): ?>
+    <?php 
+    $section_view = 'pages/sections/render/' . $section['section_type'];
+    if (file_exists(APPPATH . 'views/' . $section_view . '.php')) {
+        $this->load->view($section_view, ['section' => $section]);
+    }
+    ?>
+<?php endforeach; ?>
+
+<?php else: ?>
+<!-- Traditional Content Layout -->
 
 <!-- Page Header -->
 <header class="page-header">
@@ -103,6 +122,8 @@ $this->load->view('public/header');
     </div>
 </section>
 <?php endif; ?>
+
+<?php endif; // End if not use_sections ?>
 
 <?php
 // Load footer
